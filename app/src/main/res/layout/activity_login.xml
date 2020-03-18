@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".LoginActivity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/topLayout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintHeight_percent="0.45"
+		android:background="@android:color/black"
+		app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+		app:layout_constraintTop_toTopOf="parent" >
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/illusion"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/bottomLayout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:background="@android:color/white"
+		android:padding="@dimen/_8sdp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintHeight_percent="0.55"
+		app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/mobileNumber"
+			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/_10sdp"
+			android:hint="@string/mobile_number"
+			app:endIconMode="clear_text"
+			app:hintAnimationEnabled="true"
+			app:layout_constraintBottom_toTopOf="@+id/name"
+			app:layout_constraintVertical_chainStyle="packed"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="phone"
+				android:id="@+id/phoneNumber"
+				android:maxLength="10"
+				android:minLines="1" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/name"
+			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/_10sdp"
+			android:hint="@string/name"
+			app:endIconMode="clear_text"
+			app:hintAnimationEnabled="true"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintBottom_toTopOf="@+id/button"
+			app:layout_constraintVertical_chainStyle="packed"
+			app:layout_constraintTop_toBottomOf="@+id/mobileNumber">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/customerName"
+				android:singleLine="true"
+				android:maxLines="1" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.button.MaterialButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/button"
+			android:elevation="@dimen/_6sdp"
+			android:text="@string/next"
+			app:cornerRadius="@dimen/_15sdp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/name" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
